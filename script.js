@@ -3,8 +3,10 @@ const sounds = ["applause", "boo", "gasp", "tada", "victory", "wrong"];
 function stopAll() {
     sounds.forEach(sound => {
         const audio = document.getElementById(`audio-${sound}`);
-        audio.pause();
-        audio.currentTime = 0;
+        if(audio) {
+            audio.pause();
+            audio.currentTime = 0;
+        }
     });
 }
 

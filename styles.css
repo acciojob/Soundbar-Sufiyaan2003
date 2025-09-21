@@ -1,13 +1,10 @@
-audio {
-    display: none;
-}
-
 body {
     background: #a86fdb;
     margin: 0;
-    padding: 0;
+    padding: 40px; /* padding added to avoid clipping */
     font-family: 'Montserrat', Arial, sans-serif;
     height: 100vh;
+    box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,6 +16,8 @@ body {
 }
 
 .btn, .stop {
+    position: relative;
+    z-index: 10;        /* fix layering issues for Cypress */
     background: #673ab7;
     color: white;
     font-size: 2rem;
@@ -32,4 +31,8 @@ body {
 .btn:hover, .stop:hover {
     background: #512295;
     transform: scale(1.05);
+}
+
+audio {
+    display: none;
 }
