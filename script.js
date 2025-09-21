@@ -1,3 +1,11 @@
+window.onload = () => {
+    // Scroll the first button into view to avoid Cypress visibility error
+    const firstBtn = document.querySelector('.btn');
+    if (firstBtn) {
+        firstBtn.scrollIntoView({ behavior: 'auto', block: 'center' });
+    }
+};
+
 const sounds = ["applause", "boo", "gasp", "tada", "victory", "wrong"];
 
 function stopAll() {

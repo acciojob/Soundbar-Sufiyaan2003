@@ -1,23 +1,29 @@
 body {
     background: #a86fdb;
     margin: 0;
-    padding: 40px; /* padding added to avoid clipping */
+    padding: 40px;
     font-family: 'Montserrat', Arial, sans-serif;
     height: 100vh;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: visible; /* Make sure nothing clips buttons */
 }
 
 #buttons {
     display: flex;
     gap: 48px;
+
+    padding: 20px;
+    overflow: visible !important;
+    position: relative;
+    z-index: 1000;
 }
 
 .btn, .stop {
     position: relative;
-    z-index: 10;        /* fix layering issues for Cypress */
+    z-index: 1010;
     background: #673ab7;
     color: white;
     font-size: 2rem;
@@ -26,6 +32,7 @@ body {
     border-radius: 10px;
     cursor: pointer;
     transition: background 0.2s ease, transform 0.2s ease;
+    pointer-events: auto;
 }
 
 .btn:hover, .stop:hover {
